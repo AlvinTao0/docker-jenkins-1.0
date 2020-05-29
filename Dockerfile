@@ -1,11 +1,6 @@
 # Dockerfile
 # 使用node做为镜像
 FROM node
-# 设置时区
-RUN apk --update add tzdata \
-    && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-    && echo "Asia/Shanghai" > /etc/timezone \
-    && apk del tzdata
 # 在容器中创建该目录
 RUN mkdir -p /home/project
 # 设置容器的工作目录为该目录
